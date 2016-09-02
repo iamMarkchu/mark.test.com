@@ -1,0 +1,27 @@
+<nav class="navbar my-navbar">
+  <div class="container <{if $smarty.const.D_PAGE_NAME eq 'HOMEPAGE'}>my-home-container<{else}>my-container<{/if}>">
+    <div class="navbar-header my-logo">
+      <a class="navbar-brand" href="/">
+        <img src="/origin/images/logo.png" >
+      </a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse my-nav">
+      <ul class="nav navbar-nav">
+        <{foreach from=$navList item=item}>
+          <li><a href="<{$item.requestpath}>"><{$item.displayname}></a></li>
+        <{/foreach}>
+      </ul>
+      <div class="my-search">
+        <form class="form-inline" action="/search/" method="get">
+            <div class="form-group search-form">
+                <i class="glyphicon glyphicon-search my-search-btn"></i>
+                <input type="text" class="form-control input-search" name="q" id="keywords" placeholder="搜索" autocomplete="off">
+            </div>
+        </form>
+      </div>
+      <!--<div class="my-login">-->
+        <!--<a href="#">登录</a>-->
+      <!--</div>-->
+    </div>
+  </div>
+</nav>

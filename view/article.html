@@ -1,0 +1,23 @@
+<{include file="block_head.html"}>
+  <body>
+    <{include file="block_nav.html"}>
+    <div class="container my-article-container my-container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12">
+            <div class="page-header">
+                <h1><{$articleInfo.title}></h1>
+                <input type="hidden" id="articleid" value="<{$articleInfo.id}>">
+            </div>
+            <article>
+                <{$articleInfo.content|stripcslashes}>
+            </article>
+            <{include file="block_breadcrumb.html"}>
+            <{include file="block_article_info.html"}>
+            <{include file="block_comment.html"}>
+          </div>
+      </div>
+    </div>
+    <{include file="block_footer.html"}>
+    <{include file="block_footer_js.html"}>
+  </body>
+</html>
